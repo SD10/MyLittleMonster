@@ -13,6 +13,7 @@
 		B04A27071C9C806A00325EFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B04A27061C9C806A00325EFA /* Assets.xcassets */; };
 		B04A270A1C9C806A00325EFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B04A27081C9C806A00325EFA /* LaunchScreen.storyboard */; };
 		B04A27121C9CD12B00325EFA /* DragImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04A27111C9CD12B00325EFA /* DragImage.swift */; };
+		B04A27381C9E078C00325EFA /* MonsterImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04A27371C9E078C00325EFA /* MonsterImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		B04A27091C9C806A00325EFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B04A270B1C9C806A00325EFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B04A27111C9CD12B00325EFA /* DragImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragImage.swift; sourceTree = "<group>"; };
+		B04A27371C9E078C00325EFA /* MonsterImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				B04A27081C9C806A00325EFA /* LaunchScreen.storyboard */,
 				B04A270B1C9C806A00325EFA /* Info.plist */,
 				B04A27111C9CD12B00325EFA /* DragImage.swift */,
+				B04A27371C9E078C00325EFA /* MonsterImage.swift */,
 			);
 			path = MyLittleMonsterX;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B04A27381C9E078C00325EFA /* MonsterImage.swift in Sources */,
 				B04A27021C9C806A00325EFA /* ViewController.swift in Sources */,
 				B04A27121C9CD12B00325EFA /* DragImage.swift in Sources */,
 				B04A27001C9C806A00325EFA /* AppDelegate.swift in Sources */,
@@ -291,6 +295,7 @@
 				B04A27101C9C806A00325EFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
