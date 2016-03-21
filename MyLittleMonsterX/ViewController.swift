@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var penaltyOneImage: UIImageView!
     @IBOutlet weak var penaltyTwoImage: UIImageView!
     @IBOutlet weak var penaltyThreeImage: UIImageView!
+    @IBOutlet weak var gameOverImage: UIImageView!
+    @IBOutlet weak var playAgainButton: UIButton!
     
     var musicPlayer: AVAudioPlayer!
     var sfxBite: AVAudioPlayer!
@@ -132,9 +134,32 @@ class ViewController: UIViewController {
         timer.invalidate()
         monsterImage.playDeathAnimation()
         sfxDeath.play()
+        heartImage.hidden = true
+        foodImage.hidden = true
+        heartImage.userInteractionEnabled = false
+        foodImage.userInteractionEnabled = false
+        gameOverImage.hidden = false
+        playAgainButton.hidden = false
+        playAgainButton.userInteractionEnabled = true
     }
     
 
 
+    @IBAction func onPlayAgainPressed(sender: AnyObject) {
+        playAgainButton.hidden = true
+        playAgainButton.userInteractionEnabled = false
+        gameOverImage.hidden = true
+        heartImage.hidden = false
+        foodImage.hidden = false
+        heartImage.userInteractionEnabled = true
+        foodImage.userInteractionEnabled = true
+        monsterHappy = false
+        penaltyOneImage.alpha = DIM_ALPHA
+        penaltyTwoImage.alpha = DIM_ALPHA
+        penaltyThreeImage.alpha = DIM_ALPHA
+        currentPenalties = 0
+        monsterImage.playIdleAnimation()
+        startTimer()
+    }
 }
 
