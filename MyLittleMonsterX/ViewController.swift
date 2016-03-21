@@ -23,6 +23,8 @@ class ViewController: UIViewController {
     
     var currentPenalties = 0
     var timer: NSTimer!
+    var monsterHappy = false
+    var currentItem: UInt32 = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,17 +57,37 @@ class ViewController: UIViewController {
     }
     
     func changeGameState() {
-        currentPenalties++
-        switch currentPenalties {
+        
+        if !monsterHappy {
+            currentPenalties++
+            switch currentPenalties {
             case 1: penaltyOneImage.alpha = OPAQUE; penaltyTwoImage.alpha = DIM_ALPHA
             case 2: penaltyTwoImage.alpha = OPAQUE; penaltyThreeImage.alpha = DIM_ALPHA
             case currentPenalties where currentPenalties >= 3: penaltyThreeImage.alpha = OPAQUE
             default: penaltyOneImage.alpha = DIM_ALPHA; penaltyTwoImage.alpha = DIM_ALPHA; penaltyThreeImage.alpha = DIM_ALPHA
+            }
+            
+            if currentPenalties >= MAX_PENALTIES {
+                gameOver()
+            }
         }
         
-        if currentPenalties >= MAX_PENALTIES {
-            gameOver()
+        let randomNumber = arc4random_uniform(2) // 0 or 1
+        
+        if randomNumber == 0 {
+            foodImage.alpha = DIM_ALPHA
+            foodImage.userInteractionEnabled = false
+            heartImage.alpha = OPAQUE
+            heartImage.userInteractionEnabled = true
+        } else {
+            foodImage.alpha = OPAQUE
+            foodImage.userInteractionEnabled = true
+            heartImage.alpha = DIM_ALPHA
+            heartImage.userInteractionEnabled = false
         }
+        
+        currentItem = randomNumber
+        monsterHappy = false
     }
     
     func gameOver() {
