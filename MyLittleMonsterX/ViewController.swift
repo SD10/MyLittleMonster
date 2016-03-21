@@ -46,7 +46,13 @@ class ViewController: UIViewController {
     }
     
     func itemDroppedOnCharacter(notification: NSNotification) {
-        print("ITEM DROPPED ON CHARACTER")
+        monsterHappy = true
+        startTimer()
+        
+        foodImage.alpha = DIM_ALPHA
+        heartImage.alpha = DIM_ALPHA
+        heartImage.userInteractionEnabled = false
+        heartImage.userInteractionEnabled = false
     }
     
     func startTimer() {
